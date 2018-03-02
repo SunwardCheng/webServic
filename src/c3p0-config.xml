@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c3p0-config>
+
+
+  <!-- This app is massive! -->
+  <named-config name="stationMVCApp"> 
+  
+	<!-- 连接数据库的配置信息 -->
+	<property name="user">root</property>
+	<property name="password">123456</property>
+	<property name="driverClass">com.mysql.jdbc.Driver</property>
+	<property name="jdbcUrl">jdbc:mysql://localhost:3306/testdata</property>
+	
+	  
+    <property name="acquireIncrement">5</property><!--如果连接不够，以此向数据库索要连接数  -->
+    <property name="initialPoolSize">10</property><!-- 初始化连接数 -->
+    <property name="minPoolSize">10</property><!-- 最小的连接数 -->
+    <property name="maxPoolSize">100</property><!-- 最大连接数 -->
+
+    <!-- intergalactoApp adopts a different approach to configuring statement caching -->
+    <property name="maxStatements">20</property> <!-- 最多的Statements -->
+    <property name="maxStatementsPerConnection">5</property><!-- 一个连接最多可以使用的连接数 -->
+
+  </named-config>
+</c3p0-config>
